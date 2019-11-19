@@ -15,7 +15,7 @@ export default {
     },
 
     //save/post book to db 
-    saveBook: function(query){
+    saveBook: function(bookData){
         //post to the specific api route
         //send the res.body.data back to the backend 
         return axios.post("/api/books", bookData); 

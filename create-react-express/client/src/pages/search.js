@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-import BookCard from "../components/BookCard/bookCard"; 
+// import BookCard from "../components/BookCard/bookCard"; 
+import Card from "../components/Card/Card"; 
 
 class Search extends Component {
     constructor(props) {
@@ -37,6 +38,7 @@ class Search extends Component {
     //save the book
     handleSaveBook = event => {
         event.preventDefault(); 
+        console.log("click"); 
         API.saveBook({
             title: event.title, 
             author: event.author, 
@@ -51,11 +53,15 @@ class Search extends Component {
     render(){
         return (
             <div>
-                <Card>
+                <Card
+                    handleSearchInput = {this.handleSearchInput}
+                    handleFormSubmit = {this.handleFormSubmit}
                     books = {this.state.books}
                     onClick = {this.handleSaveBook}
-                </Card>
+                />
             </div>
         )
     }
 }
+
+export default Search; 

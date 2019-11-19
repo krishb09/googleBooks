@@ -1,21 +1,24 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-import Card from "../components/Card/Card"; 
+// import Card from "../components/Card/Card"; 
+import BookCard from "../components/BookCard/bookCard"; 
 
 class Books extends Component {
     state = {
-        title = "",
-        books = [],
-        author = "",
-        link = "", 
-        synopsis = "", 
-        img = "", 
-    }
+        books:  ["pride and p", "hamlet", "sherlock"],
+        title: "",
+        author: "",
+        link: "", 
+        synopsis: "", 
+        img: "", 
+    };
+    
 
     componentDidMount(){
         //method called after elements of page are rendered
         //fetch data from API
-        this.loadBooks(); 
+        // this.loadBooks(); 
+     
     }
 
     loadBooks = () => {
@@ -28,25 +31,30 @@ class Books extends Component {
         console.log(id)
         API.deleteBook(id)
             .then(res => this.loadBooks())
-            .cathc(err => console.log(err)); 
+            .catch(err => console.log(err)); 
     }
+    
 
     render(){
+        var data = Array.from(this.state.books)
+        console.log(data); 
         return(
             <div className="container">
-                {/* map the books and display in card component */}
-                {this.state.books.map(book => (
-                    <Card
+                
+                 {this.data.map(book => (
+                    <BookCard
                         id= {book._id}
                         title = {book.title}
                         author = {book.author}
                         synopsis = {book.synopsis}
                         img = {book.img}
                         link = {book.link}
-                        >
-                    </Card>
-                ))}
+            
+                    />
+                ))} 
             </div>
         );
     }
 }
+
+export default Books; 
