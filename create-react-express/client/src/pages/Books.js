@@ -1,30 +1,30 @@
 import React, { Component } from "react";
 import API from "../utils/API";
 // import Card from "../components/Card/Card"; 
-import BookCard from "../components/BookCard/bookCard"; 
+import SavedCard from "../components/SavedBook/savedBook";
 
 class Books extends Component {
     state = {
-        books:  ["pride and p", "hamlet", "sherlock"],
+        books: [],
         title: "",
         author: "",
-        link: "", 
-        synopsis: "", 
-        img: "", 
+        link: "",
+        synopsis: "",
+        img: "",
     };
-    
 
-    componentDidMount(){
+
+    componentDidMount() {
         //method called after elements of page are rendered
         //fetch data from API
-        // this.loadBooks(); 
-     
+        this.loadBooks();
+
     }
 
     loadBooks = () => {
         API.getBooks()
-        .then(res => this.setState({ books: res.data, title: "", author: "", synopsis: "", link: "", img: ""}))
-        .catch(err => console.log(err)); 
+            .then(res => this.setState({ books: res.data, title: "", author: "", synopsis: "", link: "", img: "" }))
+            .catch(err => console.log(err));
     }
 
     deleteBooks = id => {
@@ -32,29 +32,29 @@ class Books extends Component {
 
         API.deleteBook(id)
             .then(res => this.loadBooks())
-            .catch(err => console.log(err)); 
+            .catch(err => console.log(err));
     }
-    
 
-    render(){
+
+    render() {
         // var data = Array.from(this.state.books)
         // console.log(data); 
-        return(
+        return (
             <div className="container">
-                
-                 {this.state.books.map(book => (
-                    <BookCard
-                        key = {book._id}
-                        id= {book._id}
-                        title = {book.title}
-                        author = {book.author}
-                        synopsis = {book.synopsis}
-                        img = {book.img}
-                        link = {book.link}
-                        onClick = {() => this.deleteBooks(book._id)}
-            
+
+                {this.state.books.map(book => (
+                    <SavedCard
+                        key={book._id}
+                        id={book._id}
+                        title={book.title}
+                        author={book.author}
+                        synopsis={book.synopsis}
+                        img={book.img}
+                        link={book.link}
+                        onClick={() => this.deleteBooks(book._id)}
+
                     />
-                ))} 
+                ))}
             </div>
         );
     }
