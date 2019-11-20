@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BookCard = props => {
+const SavedCard = props => {
 
     return (
         <div className ="container">
@@ -21,7 +21,6 @@ const BookCard = props => {
                      <a href= {props.link} className="card-text"> Book Link</a> 
                 </div>
                 <div className="row">
-                <button type="button" className="btn btn-success" onClick ={props.onSave}>Save Book</button>
                 <button type="button" className="btn btn-danger" onClick ={props.onClick} >Delete Book</button>
                 </div>
             </div>
@@ -29,5 +28,4 @@ const BookCard = props => {
         </div>
     )
 }
-export default BookCard;
-
+export default SavedCard;

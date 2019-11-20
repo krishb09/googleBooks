@@ -10,8 +10,10 @@ const url = "https://www.googleapis.com/books/v1/volumes?q=";
 export default {
     //initial search for a book
     searchBook: function(query){
+        console.log("api is working")
+        console.log(url + query)
         //use apikey
-        return axios.get(url + query + apiKey);
+        return axios.get(url + query );
     },
 
     //save/post book to db 
@@ -21,12 +23,12 @@ export default {
         return axios.post("/api/books", bookData); 
     },
 
-    //get ALL books from th db 
+    //get ALL books from the db 
     getBooks: function (){
         return axios.get("/api/books"); 
     },
 
-    //get specific book from th db 
+    //get specific book from the db 
     getOneBook: function (id){
         return axios.get("/api/books/" + id); 
     },

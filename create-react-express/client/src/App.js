@@ -4,7 +4,6 @@ import "./App.css";
 
 //Components
 import Header from './components/Header/Header.js';
-import Card from './components/Card/Card.js';
 import Footer from './components/Footer/Footer.js';
 
 //Pages
@@ -18,10 +17,10 @@ class App extends Component {
       <Router>
         <div className="App">
           <Header />
-          <Card />
+
 
           <Switch>
-            <Route exact path= "/" component= {Books} /> 
+            <Route exact path= "/" component= {Search} /> 
             <Route exact path= "/books" component= {Books} />
             <Route exact path= "/search" component= {Search} />
           </Switch>

@@ -23,12 +23,13 @@ class Books extends Component {
 
     loadBooks = () => {
         API.getBooks()
-        .then(res => this.setState({ books: res.data}))
+        .then(res => this.setState({ books: res.data, title: "", author: "", synopsis: "", link: "", img: ""}))
         .catch(err => console.log(err)); 
     }
 
     deleteBooks = id => {
         console.log(id)
+
         API.deleteBook(id)
             .then(res => this.loadBooks())
             .catch(err => console.log(err)); 
@@ -36,19 +37,21 @@ class Books extends Component {
     
 
     render(){
-        var data = Array.from(this.state.books)
-        console.log(data); 
+        // var data = Array.from(this.state.books)
+        // console.log(data); 
         return(
             <div className="container">
                 
-                 {this.data.map(book => (
+                 {this.state.books.map(book => (
                     <BookCard
+                        key = {book._id}
                         id= {book._id}
                         title = {book.title}
                         author = {book.author}
                         synopsis = {book.synopsis}
                         img = {book.img}
                         link = {book.link}
+                        onClick = {() => this.deleteBooks(book._id)}
             
                     />
                 ))} 

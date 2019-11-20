@@ -2,9 +2,9 @@ var express = require("express");
 var app = express();
 var mongoose = require("mongoose");
 
-var routes = require('./controllers/booksController')(app);
+var routes = require('./routes');
 var path = require("path");
-var PORT = process.env.PORT || 3001;
+var PORT = process.env.PORT || 7425;
 
 
 // Define middleware here

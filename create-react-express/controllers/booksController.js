@@ -36,7 +36,7 @@ module.exports = {
     //update the preexisting book by its id 
     update: function(req, res){
         db.Book
-        //need req.body b/c sending back body with info to the db
+        //need req.body b/c sending back body with info to the db given a specific id 
         .findOneAndUpdate({_id: req.params.id}, req.body)
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));

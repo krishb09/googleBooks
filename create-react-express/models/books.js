@@ -7,7 +7,6 @@ var Schema = mongoose.Schema;
 // Using the Schema constructor, create a new UserSchema object
 // This is similar to a Sequelize model
 var BookSchema = new Schema({
-    // `title` is required and of type String
     title: {
       type: String,
       required: true
@@ -16,17 +15,13 @@ var BookSchema = new Schema({
         type: String, 
         required: true
     },
-    // `link` is required and of type String
     link: {
       type: String,
     },
     synopsis:{
         type: String
     },
-    img:{
-        type: String
-    }, 
-    data:{
+    date:{
         type: Date,
         default: Date.now
     }
