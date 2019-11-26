@@ -9,18 +9,18 @@ Search for a book and then save it for later.
 Go to 'saved books' for the list of all books saved. 
 
 # Languages/Technologies
-React
-HTML
-Bootstrap
-JavaScript
-jQuery
-Heroku
-mLab MongoDB
+* React
+* HTML
+* Bootstrap
+* JavaScript
+* jQuery
+* Heroku
+* mLab MongoDB
 
 # NPM Packages
-Express
-Axios
-Mongoose
+* Express
+* Axios
+* Mongoose
 
 # What It Teaches
 How to use react with mongoose and deploy to heroku
