@@ -1,12 +1,12 @@
 
 # Google Books Search
 
-Look up any book of you choice!
+Look up any book of your choice!
 
 # Instructions
 
-Search for any book then save to take a look at all the books you have saved. 
-Go to 'saved books' for the list of all books saved
+Search for a book and then save it for later. 
+Go to 'saved books' for the list of all books saved. 
 
 # Languages/Technologies
 React
@@ -24,3 +24,7 @@ Mongoose
 
 # What It Teaches
 How to use react with mongoose and deploy to heroku
+
+# Deployed Link 
+
+https://morning-lake-65176.herokuapp.com/ 
